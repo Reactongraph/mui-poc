@@ -68,7 +68,7 @@ const ProductHowItWorks = (props) => {
         </Typography>
         <div>
           <Grid container spacing={40}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} className="box-shadow">
               <div className={classes.item}>
                 <div className={classes.number}>1.</div>
                 <img
@@ -81,7 +81,7 @@ const ProductHowItWorks = (props) => {
                 </Typography>
               </div>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} className="box-shadow">
               <div className={classes.item}>
                 <div className={classes.number}>2.</div>
                 <img
@@ -94,7 +94,7 @@ const ProductHowItWorks = (props) => {
                 </Typography>
               </div>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} className="box-shadow">
               <div className={classes.item}>
                 <div className={classes.number}>3.</div>
                 <img

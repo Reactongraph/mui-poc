@@ -44,7 +44,7 @@ const ProductValues = (props) => {
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">
         <Grid container spacing={40}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className="box-shadow">
             <div className={classes.item}>
               <img
                 className={classes.image}
@@ -60,7 +60,7 @@ const ProductValues = (props) => {
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className="box-shadow">
             <div className={classes.item}>
               <img
                 className={classes.image}
@@ -76,7 +76,7 @@ const ProductValues = (props) => {
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} className="box-shadow">
             <div className={classes.item}>
               <img
                 className={classes.image}
