@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import LayoutBody from '../components/LayoutBody';
 import Typography from '../components/Typography';
+import { NavLink } from 'react-router-dom'
 
 const styles = theme => ({
   root: {
@@ -105,10 +106,10 @@ const AppFooter = (props) => {
             </Typography>
             <ul className={classes.list} align="center">
               <li className={classes.listItem}>
-                <Link href="/signup">Sign up</Link>
+                <NavLink to="/signup" className="textFooter">Sign up</NavLink>
               </li>
               <li className={classes.listItem}>
-                <Link href="/signin">Sign in</Link>
+                <NavLink to="/signin" className="textFooter">Sign in</NavLink>
               </li>
             </ul>
           </Grid>

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
+import { NavLink } from 'react-router-dom'
 import { Field, Form, FormSpy } from 'react-final-form';
 import Typography from '../components/Typography';
 import AppFooter from '../views/AppFooter';
@@ -62,9 +63,9 @@ class SignIn extends React.Component {
             </Typography>
             <Typography variant="body2" align="center">
               {'Not a member yet? '}
-              <Link href="#" align="center" underline="always">
+              <NavLink to="/signup">
                 Sign Up here
-              </Link>
+              </NavLink>
             </Typography>
           </React.Fragment>
           <Form
@@ -120,9 +121,9 @@ class SignIn extends React.Component {
             )}
           </Form>
           <Typography align="center">
-            <Link underline="always" href="#">
+            <NavLink to="#">
               Forgot password?
-            </Link>
+            </NavLink>
           </Typography>
         </AppForm>
         <AppFooter />
