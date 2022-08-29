@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import MuiPaper from '@material-ui/core/Paper';
-import { capitalize } from '@material-ui/core/utils/helpers';
+import { capitalize } from '@material-ui/core/';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -16,7 +16,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.secondary.dark,
   },
   padding: {
-    padding: theme.spacing.unit,
+     padding: theme.spacing(),
   },
 });
 
