@@ -1,8 +1,7 @@
+import { API_URL } from "./constant";
 const DefaultHeader = {
   "content-type": "application/json",
 };
-
-const API_URL = "https://reqres.in/api/";
 
 const caller = (endpoint, method, body, header = DefaultHeader, hostName = API_URL) => {
   const user = {};
