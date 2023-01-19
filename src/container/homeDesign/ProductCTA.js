@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import Typography from "../../components/Typography";
 import TextField from "../../components/TextField";
-import Snackbar from "../../components/Snackbar";
 import LayoutBody from "../../components/LayoutBody";
 import Button from "../../components/Button";
-
+import notification from "../../utils/notification";
 const styles = (theme) => ({
   root: {
     marginTop: theme.spacing.unit * 10,
@@ -58,15 +57,9 @@ const styles = (theme) => ({
 });
 
 const ProductCTA = (props) => {
-  const [open, setOpen] = useState(false);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+    notification.info("We will send you our best offers, once a week.");
   };
 
   const { classes } = props;
@@ -109,11 +102,6 @@ const ProductCTA = (props) => {
           </Hidden>
         </Grid>
       </Grid>
-      <Snackbar
-        open={open}
-        onClose={handleClose}
-        message="We will send you our best offers, once a week."
-      />
     </LayoutBody>
   );
 };

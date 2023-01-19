@@ -115,12 +115,12 @@ const AppFooter = (props) => {
             <ul className={classes.list}>
               <li className={classes.listItem}>
                 <NavLink to="/signup" className="textFooter">
-                  Sign up
+                  Sign Up
                 </NavLink>
               </li>
               <li className={classes.listItem}>
                 <NavLink to="/signin" className="textFooter">
-                  Sign in
+                  Sign In
                 </NavLink>
               </li>
             </ul>

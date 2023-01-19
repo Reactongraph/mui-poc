@@ -1,21 +1,21 @@
+import withRoot from "../withRoot";
 // --- Post bootstrap -----
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import compose from "recompose/compose";
 import { withStyles } from "@material-ui/core/styles";
+import { NavLink } from "react-router-dom";
 import { Field, Form, FormSpy } from "react-final-form";
 import Typography from "../../components/Typography";
 import AppFooter from "../homeDesign/AppFooter";
-import AppAppBar from "../homeDesign/AppAppBar";
+import AppHeader from "../homeDesign/AppHeader";
 import AppForm from "../homeDesign/AppForm";
 import { required } from "../../components/form/validation";
 import { emailRegex, passwordRegex } from "../../utils/regex";
 import RFTextField from "../../components/form/RFTextField";
 import FormButton from "../../components/form/FormButton";
 import FormFeedback from "../../components/form/FormFeedback";
-import withRoot from "../withRoot";
 import actions from "../../redux/Actions";
 
 const styles = (theme) => ({
@@ -31,9 +31,10 @@ const styles = (theme) => ({
   },
 });
 
-const SignUp = (props) => {
-  const [sent] = useState(false);
+const SignIn = (props) => {
   const dispatch = useDispatch();
+  const [sent] = useState(false);
+
   const validate = (values) => {
     const errors = required(["email", "password"], values);
     if (!errors.email && !emailRegex?.test(values?.email)) {
@@ -45,56 +46,34 @@ const SignUp = (props) => {
     return errors;
   };
 
-  const handleSubmit = (values) => {
-    dispatch(actions.resquestSignUp(values));
+  const handleFormSubmit = (values) => {
+    dispatch(actions.resquestLogin(values));
   };
 
   const { classes } = props;
 
   return (
     <React.Fragment>
-      <AppAppBar />
+      <AppHeader />
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
-            Sign Up
+            Sign In
           </Typography>
           <Typography variant="body2" align="center">
-            {"Already have an account? "}
-            <NavLink to="/signin">Login In</NavLink>
+            {"Not a member yet? "}
+            <NavLink to="/signup">Sign Up here</NavLink>
           </Typography>
         </React.Fragment>
         <Form
-          onSubmit={handleSubmit}
+          onSubmit={handleFormSubmit}
           subscription={{ submitting: true }}
           validate={validate}>
           {({ handleSubmit, submitting }) => (
             <form onSubmit={handleSubmit} className={classes.form} noValidate>
-              {/* <Grid container spacing={16}>
-                <Grid item xs={12} sm={6}>
-                  <Field
-                    autoFocus
-                    component={RFTextField}
-                    autoComplete="fname"
-                    fullWidth
-                    label="First name"
-                    name="firstName"
-                    required
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Field
-                    component={RFTextField}
-                    autoComplete="lname"
-                    fullWidth
-                    label="Last name"
-                    name="lastName"
-                    required
-                  />
-                </Grid>
-              </Grid> */}
               <Field
                 autoComplete="email"
+                autoFocus
                 component={RFTextField}
                 disabled={submitting || sent}
                 fullWidth
@@ -102,9 +81,11 @@ const SignUp = (props) => {
                 margin="normal"
                 name="email"
                 required
+                size="large"
               />
               <Field
                 fullWidth
+                size="large"
                 component={RFTextField}
                 disabled={submitting || sent}
                 required
@@ -126,9 +107,10 @@ const SignUp = (props) => {
               <FormButton
                 className={classes.button}
                 disabled={submitting || sent}
+                size="large"
                 color="secondary"
                 fullWidth>
-                {submitting || sent ? "In progress…" : "Sign Up"}
+                {submitting || sent ? "In progress…" : "Sign In"}
               </FormButton>
             </form>
           )}
@@ -139,8 +121,8 @@ const SignUp = (props) => {
   );
 };
 
-SignUp.propTypes = {
+SignIn.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default compose(withRoot, withStyles(styles))(SignUp);
+export default compose(withRoot, withStyles(styles))(SignIn);

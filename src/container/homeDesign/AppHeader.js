@@ -37,7 +37,7 @@ const styles = (theme) => ({
   },
 });
 
-const AppAppBar = (props) => {
+const AppHeader = (props) => {
   const { classes } = props;
 
   return (
@@ -77,8 +77,8 @@ const AppAppBar = (props) => {
   );
 };
 
-AppAppBar.propTypes = {
+AppHeader.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AppAppBar);
+export default withStyles(styles)(AppHeader);

@@ -7,12 +7,12 @@ import ProductHero from "./container/homeDesign/ProductHero";
 import ProductValues from "./container/homeDesign/ProductValues";
 import ProductHowItWorks from "./container/homeDesign/ProductHowItWorks";
 import ProductCTA from "./container/homeDesign/ProductCTA";
-import AppBar from "./container/homeDesign/AppAppBar";
+import AppHeader from "./container/homeDesign/AppHeader";
 
 const Index = () => {
   return (
     <React.Fragment>
-      <AppBar />
+      <AppHeader />
       <ProductHero />
       <ProductValues />
       <ProductCategories />

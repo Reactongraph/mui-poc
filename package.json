@@ -28,7 +28,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "playwright test",
+    "report": "playwright show-report",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.29.2",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

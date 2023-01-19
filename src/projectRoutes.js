@@ -4,8 +4,8 @@ import { Slide } from "@mui/material";
 import { useSelector } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import Home from "./Home";
-import SignUp from "./container/signUp";
-import SignIn from "./container/signIn";
+import SignUp from "./container/SignUp";
+import SignIn from "./container/SignIn";
 import { SnackbarUtilsConfigurator } from "./utils/notification";
 const ProjectRoutes = () => {
   const navigation = useNavigate();

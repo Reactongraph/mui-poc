@@ -1,6 +1,6 @@
 import { takeLatest, put } from "redux-saga/effects";
 import actions from "../Actions";
-import caller from "./../../utils/apiCaller";
+import caller from "../../utils/apiCaller";
 import notification from "../../utils/notification";
 import * as api from "../../utils/constant";
 
