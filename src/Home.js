@@ -1,18 +1,18 @@
-import withRoot from './modules/withRoot';
+import withRoot from "./container/withRoot";
 // --- Post bootstrap -----
-import React from 'react';
-import ProductCategories from './modules/views/ProductCategories';
-import AppFooter from './modules/views/AppFooter';
-import ProductHero from './modules/views/ProductHero';
-import ProductValues from './modules/views/ProductValues';
-import ProductHowItWorks from './modules/views/ProductHowItWorks';
-import ProductCTA from './modules/views/ProductCTA';
-import AppBar from './modules/views/AppAppBar';
+import React from "react";
+import ProductCategories from "./container/homeDesign/ProductCategories";
+import AppFooter from "./container/homeDesign/AppFooter";
+import ProductHero from "./container/homeDesign/ProductHero";
+import ProductValues from "./container/homeDesign/ProductValues";
+import ProductHowItWorks from "./container/homeDesign/ProductHowItWorks";
+import ProductCTA from "./container/homeDesign/ProductCTA";
+import AppHeader from "./container/homeDesign/AppHeader";
 
 const Index = () => {
   return (
     <React.Fragment>
-      <AppBar />
+      <AppHeader />
       <ProductHero />
       <ProductValues />
       <ProductCategories />
@@ -21,6 +21,6 @@ const Index = () => {
       <AppFooter />
     </React.Fragment>
   );
-}
+};
 
 export default withRoot(Index);
