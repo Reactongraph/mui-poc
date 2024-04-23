@@ -24,7 +24,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-   padding: `0px ${theme.spacing(5)}px`,
+   padding: `20px ${theme.spacing(5)}px`,
   },
   image: {
     height: 55,
