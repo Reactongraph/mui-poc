@@ -8,9 +8,9 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import { makeStyles } from "@material-ui/core/styles";
-import Caursole from "./caursole";
+import Carousel from "./carousel";
 import { Card, CardActionArea, CardContent, CardMedia, Grid } from "@material-ui/core";
-
+import { cardImages } from "../../constant";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -82,78 +82,35 @@ const ServiceModalPage = ({open,handleClose,data})=>{
             </Toolbar>
           </AppBar>
            <div>
-               <Caursole images={data.otherimage} />
+               <Carousel images={data.otherimage} />
                 <div className={classes.layout}>
                 <Grid container spacing={4}>
-                <Grid item  xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={'https://media.istockphoto.com/id/1017790284/vector/cost-reduction-decrease-icon-vector-symbol-image-isolated-on-background.jpg?s=612x612&w=0&k=20&c=nfAt8WFHzYdLvtFqbN2FT0Po8p8FXNopO6VJUwl2fTs='}  
-                    />
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Price : {data.fees} / day 
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                        className={classes.text}
-                      >
-                       
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-              <Grid item  xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={'https://img.freepik.com/premium-vector/star-talk-logo-element-design-template-icon_442940-367.jpg'}  
-                    />
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                         Rating : {data.ranking} / 5
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                        className={classes.text}
-                      >
-                       
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-              <Grid item  xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={'https://www.shutterstock.com/image-vector/client-loyalty-customer-satisfaction-icon-600nw-2174562919.jpg'}  
-                    />
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Staff : {data.staff} persons
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                        className={classes.text}
-                      >
-                       
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
+               {  cardImages.map((item,index)=>{
+                return(
+                  <Grid item  xs={12} sm={6} md={4} key={index}>
+                  <Card className={classes.card}>
+                    <CardActionArea>
+                      <CardMedia
+                        className={classes.cardMedia}
+                        image={item.image}  
+                      />
+                      <CardContent className={classes.cardContent}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          Price : {data.fees} / day 
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                          className={classes.text}
+                        >
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>  
+                ) 
+               })}
         </Grid>
                 </div>
            </div>

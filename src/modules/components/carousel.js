@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     
 }));
 
-const Caursole = ({images}) => {
+const Carousel = ({images}) => {
     const classes = useStyles();  
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -32,4 +32,4 @@ const Caursole = ({images}) => {
   );
 };
 
-export default Caursole;
+export default Carousel;

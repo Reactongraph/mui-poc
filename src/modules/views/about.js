@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import AppAppBar from "./AppAppBar";
 import AppFooter from "./AppFooter";
+import { aboutCards } from "../../constant";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,90 +70,24 @@ const AboutPage = () => {
         embracing the unknown.
       </Typography>
       <Grid container spacing={4} className={classes.cardlayout} >
-        <Grid item xs={12} md={6}>
-          <Card className={classes.card}>
-            <img src="/mission.jpeg" alt="image_mission" className={classes.image}/>
-            <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
-                Our Mission
-              </Typography>
-              <Typography  color="textSecondary" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                quam velit
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={6}>
-        <Card className={classes.card}>
-            <img src="/responsibility.jpg" alt="image_mission" className={classes.image}/>
-            <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
-                Our Responsibility
-              </Typography>
-              <Typography  color="textSecondary" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                quam velit
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={6}>
-        <Card className={classes.card}>
-            <img src="/vision.jpg" alt="image_mission" className={classes.image}/>
-            <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
-                Our Vision
-              </Typography>
-              <Typography  color="textSecondary" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                quam velit
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={6}>
-        <Card className={classes.card}>
-            <img src="/service.jpg" alt="image_mission" className={classes.image}/>
-            <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
-                Our Service
-              </Typography>
-              <Typography  color="textSecondary" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                quam velit
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={6}>
-        <Card className={classes.card}>
-            <img src="/dream.webp" alt="image_mission" className={classes.image}/>
-            <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
-                Our Dream
-              </Typography>
-              <Typography  color="textSecondary" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                quam velit
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={6}>
-        <Card className={classes.card}>
-            <img src="/business.jpeg" alt="image_mission" className={classes.image}/>
-            <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
-                Our Business
-              </Typography>
-              <Typography  color="textSecondary" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                quam velit
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        { aboutCards.map((item,index)=>{
+          return(
+            <Grid item xs={12} md={6} key={index}>
+            <Card className={classes.card}>
+              <img src={item.image} alt="image_mission" className={classes.image}/>
+              <CardContent className={classes.cardContent}>
+                <Typography variant="h5" component="h2">
+                  {item.text}
+                </Typography>
+                <Typography  color="textSecondary" component="p">
+                  {item.description}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          )
+        }) 
+        }
       </Grid>
     </Container>
     <AppFooter />
