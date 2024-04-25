@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MuiSnackbar from '@material-ui/core/Snackbar';
 import Slide from '@material-ui/core/Slide';
-import CloseIcon from '@material-ui/icons/Close';
-import InfoIcon from '@material-ui/icons/Info';
+import { Close } from '@material-ui/icons';
+import { Info } from '@material-ui/icons';
 import IconButton from '@material-ui/core/IconButton';
 
 const styles = theme => ({
@@ -25,14 +25,14 @@ const styles = theme => ({
     alignItems: 'center',
   },
   contentAction: {
-    paddingLeft: theme.spacing.unit * 2,
+     paddingLeft: theme.spacing(2),
   },
   info: {
     flexShrink: 0,
-    marginRight: theme.spacing.unit * 2,
+    marginRight: theme.spacing(2),
   },
   close: {
-    padding: theme.spacing.unit,
+    padding: theme.spacing(),
   },
 });
 
@@ -58,7 +58,7 @@ const Snackbar = (props) => {
       }}
       message={
         <React.Fragment>
-          <InfoIcon className={classes.info} />
+         <Info className={classes.info} />
           <span id="snackbar">{message}</span>
         </React.Fragment>
       }
@@ -70,7 +70,7 @@ const Snackbar = (props) => {
           className={classes.close}
           onClick={onClose}
         >
-          <CloseIcon />
+        <Close />
         </IconButton>,
       ]}
       {...other}

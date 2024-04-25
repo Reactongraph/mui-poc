@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import compose from 'recompose/compose';
-import pure from 'recompose/pure';
+import { compose } from 'recompose';
+import { pure } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
@@ -15,8 +15,8 @@ const styles = theme => ({
     backgroundColor: '#000',
   },
   layoutBody: {
-    marginTop: theme.spacing.unit * 8,
-    marginBottom: theme.spacing.unit * 8,
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(8),
     display: 'flex',
   },
   iconsWrapper: {
@@ -32,7 +32,7 @@ const styles = theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.palette.warning.main,
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(),
     '&:hover': {
       backgroundColor: theme.palette.warning.dark,
     },
@@ -43,11 +43,11 @@ const styles = theme => ({
     paddingLeft: 0,
   },
   listItem: {
-    paddingTop: theme.spacing.unit / 2,
-    paddingBottom: theme.spacing.unit / 2,
+    paddingTop: theme.spacing() / 2,
+    paddingBottom: theme.spacing() / 2,
   },
   language: {
-    marginTop: theme.spacing.unit,
+   marginTop: theme.spacing(),
     width: 150,
   },
 });
@@ -80,10 +80,10 @@ const AppFooter = (props) => {
             </Typography>
             <ul className={classes.list} align="center">
               <li className={classes.listItem}>
-                <Link href="#">Services</Link>
+                <Link href="#" style={{textDecoration:"none",color:"white"}}>Services</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="#">Privacy</Link>
+                <Link href="#" style={{textDecoration:"none",color:"white"}}>Privacy</Link>
               </li>
             </ul>
           </Grid>
@@ -93,10 +93,10 @@ const AppFooter = (props) => {
             </Typography>
             <ul className={classes.list} align="center">
               <li className={classes.listItem}>
-                <Link href="#">Contact</Link>
+                <Link href="#" style={{textDecoration:"none",color:"white"}} >Contact</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="#">info@materialtest.com</Link>
+                <Link href="#" style={{textDecoration:"none",color:"white"}} >info@materialtest.com</Link>
               </li>
             </ul>
           </Grid>
@@ -106,10 +106,10 @@ const AppFooter = (props) => {
             </Typography>
             <ul className={classes.list} align="center">
               <li className={classes.listItem}>
-                <NavLink to="/signup" className="textFooter">Sign up</NavLink>
+                <NavLink to="/signup" style={{textDecoration:"none",color:"white"}} className="textFooter">Sign up</NavLink>
               </li>
               <li className={classes.listItem}>
-                <NavLink to="/signin" className="textFooter">Sign in</NavLink>
+                <NavLink to="/signin" style={{textDecoration:"none",color:"white"}} className="textFooter">Sign in</NavLink>
               </li>
             </ul>
           </Grid>
