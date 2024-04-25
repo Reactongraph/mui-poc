@@ -1,9 +1,9 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import grey from '@material-ui/core/colors/grey';
-import red from '@material-ui/core/colors/red';
+import { createTheme } from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors/';
+import { grey } from '@material-ui/core/colors/';
+import { red } from '@material-ui/core/colors/';
 
-const rawTheme = createMuiTheme({
+const rawTheme = createTheme({
   palette: {
     primary: {
       ligth: '#69696a',
@@ -26,6 +26,7 @@ const rawTheme = createMuiTheme({
     },
     success: {
       xLight: green[50],
+      main:green[500],
       dark: green[700],
     },
   },

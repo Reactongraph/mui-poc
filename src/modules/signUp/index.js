@@ -2,7 +2,7 @@ import withRoot from '../withRoot';
 // --- Post bootstrap -----
 import React from 'react';
 import PropTypes from 'prop-types';
-import compose from 'recompose/compose';
+import { compose } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
@@ -18,14 +18,14 @@ import FormFeedback from '../form/FormFeedback';
 
 const styles = theme => ({
   form: {
-    marginTop: theme.spacing.unit * 6,
+   marginTop: theme.spacing(6),
   },
   button: {
-    marginTop: theme.spacing.unit * 3,
-    marginBottom: theme.spacing.unit * 2,
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(2),
   },
   feedback: {
-    marginTop: theme.spacing.unit * 2,
+    marginTop: theme.spacing(2),
   },
 });
 
